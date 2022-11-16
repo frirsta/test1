@@ -8,8 +8,22 @@ let game = {
 
 function newGame(){
     game.score = 0;
+    game.playerMoves = [];
+    game.currentGame = [];
+    showScore();
+    addTurn();
 }
 
-module.exports = { game, newGame };
+function showScore(){
+    document.getElementById("score").innerText = 0;
+}
+
+function addTurn(){
+    game.playerMoves = [];
+    game.currentGame.push(game.choices[(Math.floor(Math.random() * 4))]);
+    // showTurns();
+}
+
+module.exports = { game, newGame, showScore, addTurn };
 
 
